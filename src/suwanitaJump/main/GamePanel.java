@@ -10,9 +10,9 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JPanel;
 
-import suwanita.judge.ClickCheck;
-import suwanita.judge.KeyCheck;
 import suwanitaJump.cnst.SuwanitaJumpConst;
+import suwanitaJump.judge.ClickCheck;
+import suwanitaJump.judge.KeyCheck;
 import suwanitaJump.screen.Result;
 import suwanitaJump.screen.Stage;
 import suwanitaJump.screen.Title;
@@ -86,17 +86,20 @@ public class GamePanel extends JPanel implements Runnable, KeyListener, MouseLis
 		// タイトル画面の場合
 		case SuwanitaJumpConst.TITLE_SCENE:
 			// タイトル画面を描画
-			title.drawTitle(g, keyCheck, clickCheck);
+			title.drawTitle(g);
+			if(title.startCheck(keyCheck, clickCheck)){
+				scene = SuwanitaJumpConst.STAGE_SCENE;
+			}
 			break;
 		// ゲーム画面の場合
 		case SuwanitaJumpConst.STAGE_SCENE:
 			// ゲーム画面を描画
-			stage.drawStage(g, keyCheck);
+			//stage.drawStage(g, keyCheck);
 			break;
 		// リザルト画面の場合
 		case SuwanitaJumpConst.RESULT_SCENE:
 			// リザルト画面を描画
-			result.drawResult(g, keyCheck, clickCheck);
+			//result.drawResult(g, keyCheck, clickCheck);
 			// リザルト画面を描画
 			break;
 		}
@@ -170,7 +173,6 @@ public class GamePanel extends JPanel implements Runnable, KeyListener, MouseLis
 	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		clickCheck.mouseClicked(e);
 	}
 
 	/**
