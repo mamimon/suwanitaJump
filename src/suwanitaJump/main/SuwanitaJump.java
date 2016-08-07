@@ -5,11 +5,14 @@ import java.awt.Container;
 import javax.swing.JFrame;
 
 public class SuwanitaJump extends JFrame {
+	/**
+	 * SuwanitaJumpクラスのコンストラクタ
+	 */
 	public SuwanitaJump() {
 		// JFrameのタイトルを設定
 		setTitle("スワニータジャンプ");
 		// JPanelを生成
-		MainPanel panel = new MainPanel();
+		GamePanel panel = new GamePanel();
 		// JPanelを貼りつけるためにJFrameのContentPaneを取得
 		Container contentPane = getContentPane();
 		// JPanelを貼りつける
@@ -18,6 +21,11 @@ public class SuwanitaJump extends JFrame {
 		pack();
 	}
 
+	/**
+	 * main
+	 * @param args コマンドライン入力
+	 * @return なし
+	 */
 	public static void main(String[] args) {
 		// JFrameを生成
 		SuwanitaJump frame = new SuwanitaJump();
