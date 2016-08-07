@@ -43,7 +43,7 @@ public class Title implements ImageObserver{
 	}
 
 	/**
-	 *
+	 * スタート条件を判定する
 	 * @param key KeyCheckクラスのインスタンス
 	 * @param click ClickCheckクラスのインスタンス
 	 * @return
