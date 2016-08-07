@@ -86,7 +86,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener, MouseLis
 		// タイトル画面の場合
 		case SuwanitaJumpConst.TITLE_SCENE:
 			// タイトル画面を描画
-			title.drawTitle(g, keyCheck);
+			title.drawTitle(g, keyCheck, clickCheck);
 			break;
 		// ゲーム画面の場合
 		case SuwanitaJumpConst.STAGE_SCENE:
@@ -95,8 +95,8 @@ public class GamePanel extends JPanel implements Runnable, KeyListener, MouseLis
 			break;
 		// リザルト画面の場合
 		case SuwanitaJumpConst.RESULT_SCENE:
-			// リザルト画面を描画
-			result.drawResult(g, keyCheck);
+			// リザルト画面を描画する
+			result.drawResult(g, keyCheck, clickCheck);
 			break;
 		}
 
