@@ -44,7 +44,7 @@ public class SuwanitaJumpConst {
 	/** クリスタルの画像のパス */
 	public static final String CRYSTAL_IMAGE = "image/crystal.png";
 
-	/** プレイ中ｎのBGMのパス */
+	/** しそクリーンメロン饅頭の画像のパス */
 	public static final String SISO_CREAM_MELON_MANJU_IMAGE = "image/siso_cream_melon_manju.png";
 
 	/** プレイ中のBGMのパス */
