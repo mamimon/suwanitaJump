@@ -31,7 +31,7 @@ public class Crystal extends SuwaObject{
 	 * @param width
 	 * @param height
 	 */
-	public void displayEruDraw(Graphics g, int x, int y, int width, int height){
+	public void displayCrystalDraw(Graphics g, int x, int y, int width, int height){
 
 	}
 
