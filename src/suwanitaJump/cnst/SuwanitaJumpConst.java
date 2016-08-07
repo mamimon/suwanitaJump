@@ -44,7 +44,34 @@ public class SuwanitaJumpConst {
 	/** クリスタルの画像のパス */
 	public static final String CRYSTAL_IMAGE = "image/crystal.png";
 
-	/** しそクリーンメロン饅頭の画像のパス */
+	/** プレイ中ｎのBGMのパス */
 	public static final String SISO_CREAM_MELON_MANJU_IMAGE = "image/siso_cream_melon_manju.png";
+
+	/** プレイ中のBGMのパス */
+	public static final String STAGE_BGM = "se/Bravery_Flame.mp3";
+
+	/** ちょっと１ぺろさせろやのセリフのパス */
+	public static final String ONEPERO_SE = "se/onepero.mp3";
+
+	/** ゲームオーバーのSEのパス */
+	public static final String GAMEOVER_SE = "se/gameover.mp3";
+
+	/** しそクリーンメロン饅頭獲得のSEのパス */
+	public static final String MANJU_SE = "se/manju.mp3";
+
+	/** 移動音のSEのパス */
+	public static final String MOVE_SE = "se/move.mp3";
+
+	/** ナイスちんちんのセリフのパス */
+	public static final String NICETINTIN_SE = "se/nicetintin.mp3";
+
+	/** 死んじまったらノージャスティスだぞぉのセリフのパス */
+	public static final String NOJASTIS_SE = "se/nojastis.mp3";
+
+	/** 良かったな！おめっとさんのセリフのパス */
+	public static final String OMETTO_SE = "se/ometto.mp3";
+
+	/** 暑いからプラァ行こうぜのセリフのパス */
+	public static final String POOLER_SE = "se/pooler.mp3";
 
 }
