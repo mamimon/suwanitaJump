@@ -95,8 +95,9 @@ public class GamePanel extends JPanel implements Runnable, KeyListener, MouseLis
 			break;
 		// リザルト画面の場合
 		case SuwanitaJumpConst.RESULT_SCENE:
-			// リザルト画面を描画する
+			// リザルト画面を描画
 			result.drawResult(g, keyCheck, clickCheck);
+			// リザルト画面を描画
 			break;
 		}
 
