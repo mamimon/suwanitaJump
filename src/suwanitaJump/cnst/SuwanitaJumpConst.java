@@ -48,7 +48,7 @@ public class SuwanitaJumpConst {
 	public static final String SISO_CREAM_MELON_MANJU_IMAGE = "image/siso_cream_melon_manju.png";
 
 	/** プレイ中のBGMのパス */
-	public static final String STAGE_BGM = "se/Bravery_Flame.mp3";
+	public static final String STAGE_BGM = "bgm/bravery_Flame.mp3";
 
 	/** ちょっと１ぺろさせろやのセリフのパス */
 	public static final String ONEPERO_SE = "se/onepero.mp3";
