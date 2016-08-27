@@ -12,7 +12,7 @@ import suwanitaJump.load.LoadData;
 
 public class Title implements ImageObserver{
 	/** 背景の画像 */
-	private BufferedImage backGroundImage = null;
+	private BufferedImage backgroundImage = null;
 
 	/** スタートボタンの画像 */
 	private BufferedImage startButtonImage = null;
@@ -27,7 +27,7 @@ public class Title implements ImageObserver{
 		// 画像・SE・BGMを読み込むクラスのインスタンスの初期化
 		loadData = new LoadData();
 		// 背景画像の初期化
-		backGroundImage = loadData.loadImage(SuwanitaJumpConst.TITLE_BACKGROUND_IMAGE);
+		backgroundImage = loadData.loadImage(SuwanitaJumpConst.TITLE_BACKGROUND_IMAGE);
 		// スタートボタン画像の初期化
 		//startButtonImage = loadImage(SuwanitaJumpConst.TITLE_START_BUTTON_IMAGE);
 	}
@@ -39,7 +39,7 @@ public class Title implements ImageObserver{
 	 */
 	public void drawTitle(Graphics g){
 		//タイトル画面の背景を描画
-		g.drawImage(backGroundImage, 0, 0, this);
+		g.drawImage(backgroundImage, 0, 0, this);
 	}
 
 	/**

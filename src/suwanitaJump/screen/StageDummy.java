@@ -1,5 +1,6 @@
 package suwanitaJump.screen;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -10,7 +11,7 @@ import suwanitaJump.judge.KeyCheck;
 import suwanitaJump.load.LoadData;
 import suwanitaJump.object.Eru;
 
-public class Stage implements ImageObserver{
+public class StageDummy implements ImageObserver{
 	/** 背景の画像 */
 	private BufferedImage backgroundImage = null;
 
@@ -32,15 +33,11 @@ public class Stage implements ImageObserver{
 	/**
 	 * Stageクラスのコンストラクタ
 	 */
-	public Stage(){
+	public StageDummy(){
 		// 画像・SE・BGMを読み込むクラスのインスタンスの初期化
 		loadData = new LoadData();
-		// 背景画像の初期化
-		backgroundImage = loadData.loadImage(SuwanitaJumpConst.STAGE_BACKGROUND_IMAGE);
-		// 壁画像の初期化
-		// wallImage = loadData.loadImage(SuwanitaJumpConst.STAGE_WALL_IMAGE);
-		// エルの初期化
-		eru = new Eru(200, 50, 0, 0, SuwanitaJumpConst.ERU_IMAGE);
+		// エルのインスタンスの初期化
+		eru = new Eru(180, 650, 25, 25, SuwanitaJumpConst.ERU_IMAGE);
 	}
 
 	/**
@@ -48,12 +45,16 @@ public class Stage implements ImageObserver{
 	 * @param g 描画操作のためのオブジェクト
 	 */
 	public void drawStage(Graphics g, KeyCheck key){
-		// ステージ画面の背景を描画する
-		g.drawImage(backgroundImage, 0, 0, this);
-		// エルの移動
+		// ダミー用の壁を描画
+		g.setColor(Color.BLUE);
+		g.fillRect(0, 0, 30, 700);
+		g.fillRect(400-30, 0, 30, 700);
+
+		g.setColor(Color.BLACK);
+		// エルの移動 ※このクラスではダミーの移動
 		eru.move(key);
 		// エルの描画
-		eru.draw(g);
+		g.fillOval(eru.getX(), eru.getY(), eru.getWidth(), eru.getHeight());
 	}
 
 	/**
