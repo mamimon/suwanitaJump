@@ -49,6 +49,8 @@ public class StageDummy implements ImageObserver{
 		g.setColor(Color.BLUE);
 		g.fillRect(0, 0, 30, 700);
 		g.fillRect(400-30, 0, 30, 700);
+		
+		// ダミー用の
 
 		g.setColor(Color.BLACK);
 		// エルの移動 ※このクラスではダミーの移動
