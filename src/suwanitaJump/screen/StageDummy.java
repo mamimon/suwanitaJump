@@ -72,7 +72,7 @@ public class StageDummy implements ImageObserver{
 	 */
 	public boolean collisionCheck(){
 		// TODO
-		return false;
+		return eru.getIsDead();
 	}
 
 	/**

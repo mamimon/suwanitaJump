@@ -100,7 +100,10 @@ public class GamePanel extends JPanel implements Runnable, KeyListener, MouseLis
 		case SuwanitaJumpConst.STAGE_SCENE:
 			// ゲーム画面を描画
 			//stage.drawStage(g, keyCheck);
-			stageDummy.drawStage(g, keyCheck);;
+			stageDummy.drawStage(g, keyCheck);
+			if(stageDummy.collisionCheck()){
+				scene = SuwanitaJumpConst.RESULT_SCENE;
+			}
 			break;
 		// リザルト画面の場合
 		case SuwanitaJumpConst.RESULT_SCENE:
