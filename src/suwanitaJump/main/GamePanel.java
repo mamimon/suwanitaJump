@@ -15,6 +15,7 @@ import suwanitaJump.judge.ClickCheck;
 import suwanitaJump.judge.KeyCheck;
 import suwanitaJump.screen.Result;
 import suwanitaJump.screen.Stage;
+import suwanitaJump.screen.StageDummy;
 import suwanitaJump.screen.Title;
 
 public class GamePanel extends JPanel implements Runnable, KeyListener, MouseListener {
@@ -39,6 +40,9 @@ public class GamePanel extends JPanel implements Runnable, KeyListener, MouseLis
 	/** リザルト画面の表示を行うResultクラスのインスタンス */
 	private Result result = null;
 
+	////////Stageクラスのダミー////////////
+	private StageDummy stageDummy = null;
+
 	/**
 	 * GamePanelクラスのコンストラクタ
 	 */
@@ -57,6 +61,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener, MouseLis
 		title = new Title();
 		stage = new Stage();
 		result = new Result();
+		stageDummy = new StageDummy();
 
 		// スレッドがnullだった場合
 		if (thread == null) {
@@ -95,6 +100,10 @@ public class GamePanel extends JPanel implements Runnable, KeyListener, MouseLis
 		case SuwanitaJumpConst.STAGE_SCENE:
 			// ゲーム画面を描画
 			//stage.drawStage(g, keyCheck);
+			stageDummy.drawStage(g, keyCheck);
+			if(stageDummy.collisionCheck()){
+				scene = SuwanitaJumpConst.RESULT_SCENE;
+			}
 			break;
 		// リザルト画面の場合
 		case SuwanitaJumpConst.RESULT_SCENE:

@@ -1,25 +1,31 @@
 package suwanitaJump.object;
 
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.awt.image.ImageObserver;
 
-import com.sun.prism.Graphics;
+import suwanitaJump.load.LoadData;
 
-public class SuwaObject {
+public class SuwaObject implements ImageObserver{
 
 	/** オブジェクトのx座標 */
-	private int x = 0;
+	protected int x = 0;
 
 	/** オブジェクトのy座標 */
-	private int y = 0;
+	protected int y = 0;
 
 	/** オブジェクトの幅 */
-	private int width = 0;
+	protected int width = 0;
 
 	/** オブジェクトの高さ */
-	private int heigth = 0;
+	protected int height = 0;
 
 	/** オブジェクトの画像のパス */
-	private BufferedImage image = null;
+	protected BufferedImage image = null;
+
+	/** 画像・SE・BGMを読み込むクラスのインスタンス */
+	private LoadData loadData = null;
 
 	/**
 	 * SwaObjectクラスのコンストラクタ
@@ -30,8 +36,15 @@ public class SuwaObject {
 	 * @param path　オブジェクトの画像のパス
 	 * @return なし
 	 */
-	public SuwaObject(int x, int y, int width, int heigth, String path){
-
+	public SuwaObject(int x, int y, int width, int height, String path){
+		this.x = x;
+		this.y = y;
+		this.width = width;
+		this.height = height;
+		// 画像・SE・BGMを読み込むクラスのインスタンスの初期化
+		loadData = new LoadData();
+		// オブジェクト画像の初期化
+		image = loadData.loadImage(path);
 	}
 
 	/**
@@ -40,19 +53,8 @@ public class SuwaObject {
 	 * @return なし
 	 */
     public void draw(Graphics g){
-
-
+    	g.drawImage(this.image, this.x, this.y, this);
 	}
-
-    /**
-     * 画像のURLから画像を読み込む
-     * @param path
-     * @return
-     */
-    public BufferedImage loadImage(String path){
-
-		return image;
-    }
 
     /**
      * オブジェクトのx座標を返す
@@ -60,7 +62,7 @@ public class SuwaObject {
      */
     public int getX(){
 
-		return x;
+		return this.x;
 
     }
 
@@ -70,7 +72,7 @@ public class SuwaObject {
      */
     public int getY(){
 
-		return y;
+		return this.y;
     }
 
     /**
@@ -79,16 +81,22 @@ public class SuwaObject {
      */
     public int getWidth(){
 
-    	return width;
+    	return this.width;
     }
 
     /**
      * オブジェクトの高さを返す
      * @return heigth
      */
-    public int getHeigth(){
+    public int getHeight(){
 
-    	return heigth;
+    	return this.height;
     }
+
+	@Override
+	public boolean imageUpdate(Image img, int infoflags, int x, int y, int width, int height) {
+		// TODO 自動生成されたメソッド・スタブ
+		return false;
+	}
 
 }
